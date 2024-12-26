@@ -9,7 +9,7 @@ const App = () => {
   
   // Fetch todos from the backend
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_BASE_URL}/api/todos`)
+    axios.get(`${process.env.REACT_APP_SERVER_BASE_URL}`)
       .then((response) => {
         setTodos(response.data);
       })
@@ -18,7 +18,7 @@ const App = () => {
 
   // Toggle todo completion status
   const toggleTodo = (id) => {
-    axios.put(`${process.env.REACT_APP_SERVER_BASE_URL}/api/todos/${id}`)
+    axios.put(`${process.env.REACT_APP_SERVER_BASE_URL}/${id}`)
       .then(() => {
         setTodos(todos.map(todo =>
           todo._id === id ? { ...todo, completed: true } : todo
@@ -31,7 +31,7 @@ const App = () => {
   const addTodo = () => {
     if (newTodo.trim() === '') return; // Prevent adding empty todos
     
-    axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/api/todos`, {
+    axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/`, {
       text: newTodo,
     })
       .then((response) => {
