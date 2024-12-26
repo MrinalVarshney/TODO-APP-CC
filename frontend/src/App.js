@@ -62,6 +62,7 @@ const App = () => {
           <Route path="/" exact element={
             <>
               <h1>Todo List</h1>
+              <img src="/todo/static/todo.png" alt="Logo" style={{ width: 200, height: 200 }} />
               <div>
                 <input
                   type="text"
