@@ -31,7 +31,7 @@ const App = () => {
   const addTodo = () => {
     if (newTodo.trim() === '') return; // Prevent adding empty todos
     
-    axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/api/todos`, {
+    axios.post(`${process.env.REACT_APP_SERVER_BASE_URL}/`, {
       text: newTodo,
     })
       .then((response) => {
